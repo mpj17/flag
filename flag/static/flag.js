@@ -1,15 +1,15 @@
 "use strict";
 
-function Flag(inId, origId, bwId, greyId, smallId) {
+function Flag(fileInput, origImg, bwCanvas, greyImg, smallImg) {
     var image = null;
 
     function monochrome () {
         var thumbHeight = 110, newHeight=null, newWidth=null,
-            imageData=null, grey=null,
-            canvas = document.getElementById('ugly-bw'),
-            context = canvas.getContext('2d');
+            imageData=null, grey=null, canvas=null, context=null;
+        canvas = jQuery(bwCanvas)[0];
+        context = canvas.getContext('2d');
         image.style.display = 'none';
-        grey = document.getElementById('ugly-grey');
+        grey = jQuery(greyImg)[0];
         context.drawImage(image, 0, 0, grey.width, grey.height);
         // Now monochrome
         imageData = context.getImageData(0, 0, grey.width, grey.height);
@@ -29,9 +29,9 @@ function Flag(inId, origId, bwId, greyId, smallId) {
                 i=null, d=null, e=null;
 
             reader.onload = function (e) {
-                jQuery('#ugly-orig').attr('src', e.target.result);
-                jQuery('#ugly-grey').attr('src', e.target.result);
-                jQuery('#ugly-small').attr('src', e.target.result);
+                jQuery(origImg).attr('src', e.target.result);
+                jQuery(greyImg).attr('src', e.target.result);
+                jQuery(smallImg).attr('src', e.target.result);
                 image.src = e.target.result;
             }
             reader.readAsDataURL(input.files[0]);
@@ -44,7 +44,7 @@ function Flag(inId, origId, bwId, greyId, smallId) {
             monochrome();
         }
 
-        jQuery("#ugly-in").change(function(){
+        jQuery(fileInput).change(function(){
             readURL(this);
             jQuery('#demo')
                 .removeClass('collapsed')
@@ -55,6 +55,7 @@ function Flag(inId, origId, bwId, greyId, smallId) {
 }
 
 jQuery(window).load(function () {
-    var f=null;
-    f = Flag('ugly-in', 'ugly-orig', 'ugly-bw', 'ugly-grey', 'ugly-small');
+    var flagScript=null, f=null;
+    flagScript = jQuery('#ugly-script');
+    f = Flag('#ugly-in', '#ugly-orig', '#ugly-bw', '#ugly-grey', '#ugly-small');
 });

@@ -57,5 +57,9 @@ function Flag(fileInput, origImg, bwCanvas, greyImg, smallImg) {
 jQuery(window).load(function () {
     var flagScript=null, f=null;
     flagScript = jQuery('#ugly-script');
-    f = Flag('#ugly-in', '#ugly-orig', '#ugly-bw', '#ugly-grey', '#ugly-small');
+    f = Flag(flagScript.data('file-input'),
+             flagScript.data('orig'),
+             flagScript.data('bw'),
+             flagScript.data('grey'),
+             flagScript.data('small'));
 });

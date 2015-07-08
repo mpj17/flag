@@ -1,0 +1,42 @@
+body {
+    font-family: dejavu sans;
+    font-size: 16px;
+    line-height: 1.5;
+}
+img {
+    border: 1px solid #dddddd;
+}
+#content {
+    margin: 0 auto 0 auto;
+    max-width: 38em;
+}
+.collapsed {
+    opacity: 0;
+    display: none;
+}
+.full {
+    animation-name: in;
+    animation-duration: 2.5s;
+    opacity: 1;
+    display: block;
+}
+@keyframes in {
+    0% {opacity: 0;}
+    100% {opacity: 1;;}
+}
+
+
+#ugly-orig, #ugly-grey, #ugly-monochrome {
+    height: 2.5cm;
+    width: 3.75cm;
+}
+.small-flag {
+    height: 1em;
+    width: 1.5em;
+}
+#ugly-flag-small-list li {
+    list-style: none;
+}
+#ugly-grey {
+    filter: grayscale(100%);
+}

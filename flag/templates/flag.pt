@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Ugly flag</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css"
+          href="${request.static_url('flag:static/flag.css') }"/>
+  </head>
+  <body id="ugly-flag">
+    <div id="gallery">
+    </div><!--gallery-->
+    <div id="content">
+      <h1>Ugly flag</h1>
+      <section id="ugly-flag-intro">
+        <p>
+          Flags are hard.
+          This page is a tool to evaluate flag designs: how well a
+          flag works when it is
+          <a href="#ugly-flag-small">small,</a>
+          <a href="#ugly-flag-grey">grey scale,</a> and
+          <a href="#ugly-flag-bw">black and white.</a>
+        </p>
+        <p>
+          It is possible to come up with some brilliant flags.
+          Roman Mars, at 99% Invisible, as an excellent discussion
+          about
+          <a title="Vexillonaire"
+             href="http://99percentinvisible.org/episode/vexillonaire/">the
+          design of the flag of Portland, Oregon,</a>
+          and
+          <a title="Roman Mars: Why city flags may be the worst-designed thing you've never noticed "
+             href="https://youtu.be/pnv5iKB2hl4">a great TED talk
+          on the design of flags.</a>
+          It is also possible to
+          <a href="http://www.otago.ac.nz/philosophy/Staff/JoshParsons/flags/intro.html"
+             title="The world's flags given letter grades">grade flags.</a>
+        </p>
+      </section><!--ugly-flag-intro-->
+      <section id="ugly-flag-input">
+        <h2 id="ugly-flag-input-h">Pick a flag</h2>
+        <p>
+          First, pick a flag.
+        </p>
+        <input id="ugly-in" type="file" accept="image/*,*png,*jpg,*gif"
+               aria-labelledby="ugly-flag-input-h" />
+      </section><!--ugly-flag-input-->
+      <div id="demo" class="collapsed">
+        <section id="ugly-flag-orig">
+          <h2>Flag seen from a distance</h2>
+          <p>
+            Below is roughly what the flag will look like at the top
+            of a flag-poll (it is 3.75cm wide and 2.5cm high).
+            If the flag looks terrible at this size then it is a
+            terrible flag.
+          </p>
+          <img id="ugly-orig" src="" />
+        </section><!--ugly-flag-orig-->
+        <section id="ugly-flag-small">
+          <h2>Small</h2>
+          <p>
+            The flags do get <b>smaller:</b>
+            <img class="small-flag" id="ugly-small" />
+            this is what the flag looks like when used within text.
+            For example, flags in a list:
+          </p>
+          <ul id="ugly-flag-small-list">
+            <li><img src="http://www.otago.ac.nz/philosophy/Staff/JoshParsons/flags/fotw/ca.gif" class="small-flag"/> Canada</li>
+            <li><img src="http://www.otago.ac.nz/philosophy/Staff/JoshParsons/flags/fotw/gm.gif" class="small-flag"/> Gambia</li>
+            <li><img src="http://www.otago.ac.nz/philosophy/Staff/JoshParsons/flags/fotw/jp.gif" class="small-flag"/> Japan</li>
+          </ul>
+          <p>
+            Flags with too much detail look awful at this size
+            [death stare at
+            <a title="Flag of Mexico"
+               href="https://en.wikipedia.org/wiki/Flag_of_Mexico">Mexico</a>].
+          </p>
+        </section><!--ugly-flag-small-->
+        <section id="ugly-flag-grey">
+          <h2>Grey scale</h2>
+          <p>
+            Flags need to work when in <b>grey scale:</b> no colour at
+            all (or <i>monochrome</i>).
+            This is what the flag will look like when printed with a
+            typical printer.
+          </p>
+          <img id="ugly-grey" src="" />
+        </section><!--ugly-flag-grey-->
+        <section id="ugly-flag-bw">
+          <h2>Black and white</h2>
+          <p>
+            It does get worse: think of a flag embossed on a
+            passport, projected as a silhouette, carved in stone,
+            or faxed (your doctor uses a fax).
+            Below is what the flag looks like in black and white.
+          </p>
+          <canvas id="ugly-bw">
+          </canvas>
+        </section><!--ugly-flag-bw-->
+      </div><!--demo-->
+      <section id="ugly-flag-copyright">
+        <p>
+          Copyright © Michael JasonSmith, 2015.
+        </p>
+        <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Flag evaluator</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/mpj17/flag" rel="dct:source">https://github.com/mpj17/flag</a>.
+        </p>
+      </section><!--ugly-flag-copyright-->
+    </div><!--content-->
+    <script type="text/javascript"
+            src="http://code.jquery.com/jquery-2.1.4.min.js"> </script>
+    <script type="text/javascript"
+            src="${request.static_url('flag:static/flag.js') }">
+    </script>
+  </body>
+</html>
